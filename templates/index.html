@@ -178,8 +178,31 @@
 		<section id="tutorial_section" class="ftco-section bg-light">
 			<div id="tutorial_lists" class="container">
 				<div class="row">
-           
-            <p>Showing {{res['hits']['total']['value']}} Results of {{request.form["input"]}}</p>
+            <div><p>Showing {{res['hits']['total']['value']}} Results of {{request.form["input"]}}</p></div>
+            
+            <div class="col-md-12 ftco-animate">
+              <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+                    <div class="mb-4 mb-md-0 mr-5">
+            <div class="job-post-item-header d-flex align-items-center">
+            <div class="badge-wrap" >
+            {% for item in  res['aggregations']['artists']['buckets']  %}
+            <span class="bg-secondary text-white badge py-2 px-3" style="background-color: steelblue!important;">{{item['key']}} : {{item['doc_count']}}</span>
+            {% endfor %}
+            </div>
+            </div>
+            <br>
+            <div class="job-post-item-header d-flex align-items-center">
+              <div class="badge-wrap" >
+              {% for item in  res['aggregations']['genres']['buckets']  %}
+              <span class="bg-secondary text-white badge py-2 px-3" style="background-color:rgb(37, 163, 37)!important;">{{item['key']}} : {{item['doc_count']}}</span>
+              {% endfor %}
+              </div>
+              </div>
+            </div>
+              </div>
+            </div>
+            
+
                     {% for hit in res['hits']['hits'] %}
                     
                         <div class="col-md-12 ftco-animate">
@@ -189,7 +212,7 @@
                                       <h2 class="mr-3 text-black h3">{{ hit['_source']['songName'] }}</h2>
                                         <div class="badge-wrap">
                                           {% for label in  hit['_source']['genre']  %}
-                                            <span class="bg-secondary text-white badge py-2 px-3">{{label}}</span>
+                                            <span class="bg-secondary text-white badge py-2 px-3" >{{label}}</span>
                                           {% endfor %}
                                         </div>
                                     </div>

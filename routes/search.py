@@ -69,12 +69,33 @@ def index():
                     "size": 50,
                     "sort": [{
                         "views": {
-        "order": "desc",
+        "order": "desc"
         
 
       }
 
-                     } ]
+                     } ],
+                     
+  "aggs": {
+    "genres": {
+      "terms": {
+        "field": "genre.keyword",
+        "min_doc_count": 10,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    },
+    "artists":{
+      "terms": {
+        "field": "artist.keyword",
+        "min_doc_count": 10,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
                 }
             else:
                 payload = {
@@ -88,7 +109,28 @@ def index():
                     "size": 50,
                     "sort": [
 
-                    ]
+                    ],
+                    
+  "aggs": {
+    "genres": {
+      "terms": {
+        "field": "genre.keyword",
+        "min_doc_count": 10,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    },
+    "artists":{
+      "terms": {
+        "field": "artist.keyword",
+        "min_doc_count": 10,
+        "order": {
+          "_count": "desc"
+        }
+      }
+    }
+  }
                 }
             payload = json.dumps(payload)
             url = "http://localhost:9200/hacker/_search"

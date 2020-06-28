@@ -1,7 +1,7 @@
 As sinhala stemmer https://github.com/e11379dana/SinhalaStemming.git is used here.
 
 # SinhalaStemming
-A simple stemming tool for Sinhalese (?????). 
+A simple stemming tool for Sinhalese (සිංහල). 
 
 
 ## How to get started

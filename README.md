@@ -27,4 +27,5 @@ Search engine to retrieve sinhala songs and metadata of sinhala songs using Elas
 
 ![Screenshot 2](/Screenshots/ss2.jpg?raw=true "Search results")
 
-**Note :** Please go through `[SinhalaStemmer.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/SinhalaStemmer.md)`, `[SinhalaTokenizer.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/SinhalaTokenizer.md)` and `[Scraper.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/Scraper.md)` for more details on Stemmer, Tokenizer and Scraper.
+## Note
+**Please go through [SinhalaStemmer.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/SinhalaStemmer.md), [SinhalaTokenizer.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/SinhalaTokenizer.md) and [Scraper.md](https://github.com/maduranga95/sinhala-songs-search-engine/blob/master/Scraper.md) for more details on Stemmer, Tokenizer and Scraper.**

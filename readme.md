@@ -20,3 +20,8 @@ Search engine to retrieve sinhala songs and metadata of sinhala songs using Elas
 3. After that if you are posting the sinhala song data using the json file provided, you can run `es_doc_post.py` to post the documents to the index created.
 4. Then run `app.py` to run the Flask app with the front end. 
 5. Visit [http://localhost:8005/](http://localhost:8005/) to view the Sinhala Song Search Engine.
+
+## Screenshots
+
+![Screenshot 1](/Screenshots/ss1.jpg?raw=true "Search")
+![Screenshot 2](/Screenshots/ss2.jpg?raw=true "Search results")

@@ -32,14 +32,23 @@ def index():
             # Sinhala tokenizer
             tokenized_string = ' '.join([str(word) for word in tokenizer.tokenize(search_term)])
             print(tokenized_string)
+            # Manual stemming
+            manual_stemmed_list = []
+            for w in tokenizer.tokenize(search_term):
+                if w[-2:]=="ගේ":
+                    w = w[:-2]
+                manual_stemmed_list.append(w)
+
+            print(manual_stemmed_list)
             # Sinhala Stemmer
-            bench_word_list, check_word_list = st.stemminig(  tokenizer.tokenize(search_term))
+            bench_word_list, check_word_list = st.stemminig(  manual_stemmed_list)
             list_after_stemming = list(set(bench_word_list)- set(check_word_list))
             print(list_after_stemming)
+            
             if len(list_after_stemming)>0:
                 stemmed_string = ' '.join([str(word) for word in tokenizer.tokenize(search_term).extend(list_after_stemming)])
             else:
-                stemmed_string = tokenized_string
+                stemmed_string = ' '.join([str(word) for word in manual_stemmed_list])
 
             modified_search_term = ' '.join([str(elem) for elem in stemmed_string.split('.')]) 
             print(modified_search_term)

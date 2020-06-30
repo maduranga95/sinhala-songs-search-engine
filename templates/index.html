@@ -179,7 +179,7 @@
 			<div id="tutorial_lists" class="container">
 				<div class="row">
             <div><p>Showing {{res['hits']['total']['value']}} Results of {{request.form["input"]}}</p></div>
-            
+            {% if request.form["input"] == '' %}
             <div class="col-md-12 ftco-animate">
               <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
                     <div class="mb-4 mb-md-0 mr-5">
@@ -201,6 +201,7 @@
             </div>
               </div>
             </div>
+            {% endif %}
             
 
                     {% for hit in res['hits']['hits'] %}
